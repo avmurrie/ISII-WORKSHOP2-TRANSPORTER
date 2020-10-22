@@ -6,6 +6,15 @@ public class CarInsurance {
 	private char marriedStatus;
 	private char licenseCliente;
 	private final int BASE = 500;
+	
+	public CarInsurance(int age, char gen, char marriedStatus,char licenseCliente) {
+		 this.ageClient = age;
+		 this.genClient = gen;
+		 this.marriedStatus = marriedStatus;
+		 this.licenseCliente = licenseCliente;
+	}
+	
+	
 	public int getAgeClient() {
 		return ageClient;
 	}
