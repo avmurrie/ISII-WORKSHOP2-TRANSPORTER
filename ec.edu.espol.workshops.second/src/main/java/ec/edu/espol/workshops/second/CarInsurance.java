@@ -4,14 +4,14 @@ public class CarInsurance {
 	private int ageClient;
 	private char genClient;
 	private char marriedStatus;
-	private char licenseCliente;
+	private char licenseClient;
 	private final int BASE = 500;
 	
-	public CarInsurance(int age, char gen, char marriedStatus,char licenseCliente) {
+	public CarInsurance(int age, char gen, char marriedStatus,char licenseClient) {
 		 this.ageClient = age;
 		 this.genClient = gen;
 		 this.marriedStatus = marriedStatus;
-		 this.licenseCliente = licenseCliente;
+		 this.licenseClient = licenseClient;
 	}
 	
 	
@@ -27,8 +27,13 @@ public class CarInsurance {
 	public void setGenClient(char genClient) {
 		this.genClient = genClient;
 	}
+	public void setMarriedStatus(char marriedStatus) {
+		this.marriedStatus = marriedStatus;
+	}
 	
-	
+	public void setLicenseClient(char licenseClient) {
+		this.licenseClient = licenseClient;
+	}
 	//return the value of the insurance charge or -1 if not applicable
 	public int calcularPrima() {
 		if(this.getAgeClient()<25 && this.getGenClient()=='M' && this.getMarriedStatus()=='N') {
