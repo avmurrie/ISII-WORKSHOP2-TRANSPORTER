@@ -27,10 +27,16 @@ public class CarInsurance {
 	public void setGenClient(char genClient) {
 		this.genClient = genClient;
 	}
+	public int getMarriedStatus() {
+		return marriedStatus;
+	}
 	public void setMarriedStatus(char marriedStatus) {
 		this.marriedStatus = marriedStatus;
 	}
 	
+	public int getLicenseClient() {
+		return licenseClient;
+	}
 	public void setLicenseClient(char licenseClient) {
 		this.licenseClient = licenseClient;
 	}
@@ -53,7 +59,7 @@ public class CarInsurance {
 		if(this.getAgeClient()>80) {
 			return false;
 		}
-		else if(this.getLicenseCliente()=='Y') {
+		else if(this.getLicenseClient()=='Y') {
 			return true;
 		}
 		return false;
