@@ -1,19 +1,20 @@
 package ec.edu.espol.workshops.second;
 
 public class CarInsurance {
-  private int ageClient;
-  private char genClient;
-  private char marriedStatus;
-  private char licenseClient;
-  private static final int base = 500; // NOPMD by User on 30/10/20 00:13
 
-  public CarInsurance(int age, char gen, char marriedStatus, char licenseClient) {
-    this.ageClient = age;
-    this.genClient = gen;
-    this.marriedStatus = marriedStatus;
-    this.licenseClient = licenseClient;
-  }
+	private int ageClient;
+	private char genClient;
+	private char marriedStatus;
+	private char licenseClient;
+	private static final int base = 500;
 	
+	public CarInsurance(int age, char gen, char marriedStatus,char licenseClient) {
+		 this.ageClient = age;
+		 this.genClient = gen;
+		 this.marriedStatus = marriedStatus;
+		 this.licenseClient = licenseClient;
+	}
+
 	
   public int getAgeClient() {
     return ageClient;
@@ -40,6 +41,7 @@ public class CarInsurance {
 	public void setLicenseClient(char licenseClient) {
 		this.licenseClient = licenseClient;
 	}
+	
 	//return the value of the insurance charge or -1 if not applicable
 	
   public int calcularPrima() {
