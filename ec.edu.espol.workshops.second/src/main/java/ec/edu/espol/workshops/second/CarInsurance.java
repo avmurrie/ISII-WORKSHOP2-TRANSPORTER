@@ -6,7 +6,8 @@ public class CarInsurance {
 	private char genClient;
 	private char marriedStatus;
 	private char licenseClient;
-	private static final int base = 500;
+	protected static final int BASE = 500;
+
 	
 	public CarInsurance(int age, char gen, char marriedStatus,char licenseClient) {
 		 this.ageClient = age;
