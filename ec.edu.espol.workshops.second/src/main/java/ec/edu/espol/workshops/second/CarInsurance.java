@@ -1,5 +1,7 @@
 package ec.edu.espol.workshops.second;
 
+import java.lang.*;
+
 public class CarInsurance {
 
 	private int ageClient;
@@ -8,7 +10,6 @@ public class CarInsurance {
 	private char licenseClient;
 	protected static final int BASE = 500;
 
-	
 	public CarInsurance(int age, char gen, char marriedStatus,char licenseClient) {
 		 this.ageClient = age;
 		 this.genClient = gen;
@@ -44,27 +45,29 @@ public class CarInsurance {
 	}
 	
 	//return the value of the insurance charge or -1 if not applicable
-	
-  public int calcularPrima() {
-    if (this.getAgeClient() < 25 && this.getGenClient() == 'M' 
-        && this.getMarriedStatus() == 'N') {
-      return base + 1500;
-    } else if (this.getGenClient() == 'F' || this.getMarriedStatus() == 'Y') {
-      return base - 200;
-    } else if (this.getAgeClient() > 45 && this.getAgeClient() < 65) {
-      return base - 100;
-    }
-    return -1;
-  }
+
+	public int calcularPrima() {
+		if(this.getAgeClient()<25 && Character.toUpperCase(this.getGenClient()) =='M' && Character.toUpperCase(this.getMarriedStatus())=='N') {
+			return BASE+1500;
+		}
+		else if(Character.toUpperCase(this.getGenClient())=='F' || Character.toUpperCase(this.getMarriedStatus())=='Y') {
+			return BASE-200;
+		}
+		else if(this.getAgeClient()>45 && this.getAgeClient()<65) {
+			return BASE-100;
+		}
+		return BASE;
+	}
 	
 	//return true or false if customer information does not meet the requirements
 	public boolean validarPolitica() {
-		if(this.getAgeClient() > 80) {
+		if(this.getAgeClient()>80 || this.getAgeClient() < 0) {
 			return false;
 		}
-		else if(this.getLicenseClient() == 'Y') {
+		else if(Character.toUpperCase(this.getLicenseClient())=='Y') {			
+
 			return true;
-		}
+		}		
 		return false;
 	}
 
