@@ -65,7 +65,6 @@ public class CarInsurance {
 			return false;
 		}
 		else if(Character.toUpperCase(this.getLicenseClient())=='Y') {			
-
 			return true;
 		}		
 		return false;
