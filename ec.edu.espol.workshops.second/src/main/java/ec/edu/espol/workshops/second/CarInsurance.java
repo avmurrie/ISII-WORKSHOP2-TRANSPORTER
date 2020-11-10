@@ -3,23 +3,24 @@ package ec.edu.espol.workshops.second;
 import java.lang.*;
 
 public class CarInsurance {
+
 	private int ageClient;
 	private char genClient;
 	private char marriedStatus;
 	private char licenseClient;
 	protected static final int BASE = 500;
-	
+
 	public CarInsurance(int age, char gen, char marriedStatus,char licenseClient) {
 		 this.ageClient = age;
 		 this.genClient = gen;
 		 this.marriedStatus = marriedStatus;
 		 this.licenseClient = licenseClient;
 	}
+
 	
-	
-	public int getAgeClient() {
-		return ageClient;
-	}
+  public int getAgeClient() {
+    return ageClient;
+  }
 	public void setAgeClient(int ageClient) {
 		this.ageClient = ageClient;
 	}
@@ -42,7 +43,9 @@ public class CarInsurance {
 	public void setLicenseClient(char licenseClient) {
 		this.licenseClient = licenseClient;
 	}
+	
 	//return the value of the insurance charge or -1 if not applicable
+
 	public int calcularPrima() {
 		if(this.getAgeClient()<25 && Character.toUpperCase(this.getGenClient()) =='M' && Character.toUpperCase(this.getMarriedStatus())=='N') {
 			return BASE+1500;
@@ -62,6 +65,7 @@ public class CarInsurance {
 			return false;
 		}
 		else if(Character.toUpperCase(this.getLicenseClient())=='Y') {			
+
 			return true;
 		}		
 		return false;

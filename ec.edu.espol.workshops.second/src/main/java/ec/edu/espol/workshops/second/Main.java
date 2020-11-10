@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 
 public class Main {
+
 	public static void main(String[] args)  {
 		CarInsurance usuario;
         Scanner sc = new Scanner(System.in,"UTF-8");       
