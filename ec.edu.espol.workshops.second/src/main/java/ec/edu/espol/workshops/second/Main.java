@@ -20,7 +20,7 @@ public class Main {
         	char licencia=sc.next().charAt(0);
         	usuario= new CarInsurance(edad,gen,estado,licencia);
         	if(usuario.validarPolitica()) {
-        		System.out.println("The value of the premium is:"+	usuario.calcularPrima());
+        		System.out.println("The value of the premium is:"+	CarInsurance.calcularPrime(edad,gen,estado,licencia));
         	}
         	else {
         		System.out.println("The customer does not apply to a valid premium");
