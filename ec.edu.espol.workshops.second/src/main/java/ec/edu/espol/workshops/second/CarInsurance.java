@@ -59,6 +59,20 @@ public class CarInsurance {
 		return BASE;
 	}
 	
+	public static int calcularPrime(int age, char gender, char married, char license) {
+		if(age<25 && Character.toUpperCase(gender) =='M' && Character.toUpperCase(married)=='N') {
+			return BASE+1500;
+		}
+		else if(Character.toUpperCase(gender)=='F' || Character.toUpperCase(married)=='Y') {
+			return BASE-200;
+		}
+		else if(age>45 && age<65) {
+			return BASE-100;
+		}
+		return BASE;
+	}
+	
+	
 	//return true or false if customer information does not meet the requirements
 	public boolean validarPolitica() {
 		if(this.getAgeClient()>80 || this.getAgeClient() < 0) {
