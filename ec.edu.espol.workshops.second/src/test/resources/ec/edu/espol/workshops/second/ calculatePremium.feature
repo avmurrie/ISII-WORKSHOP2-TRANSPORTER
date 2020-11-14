@@ -18,19 +18,7 @@ Feature: Calculate the insurance prime for a customer under 44 years old
 		| 16	| N							| 500   |
 		
 
-	Scenario: The customer is female  
-		Given is customer female
-		When Calculate the insurance prime
-		Then Show 300
-		
-	Scenario Outline: Calculate the insurance prime for a customer
-		Given is customer <gender>
-		When Calculate the insurance prime
-		Then Show <prime>		
-		Examples:
-		| gender | prime |
-		|	f			 | 300   |
-		| F			 | 300   |
+
 
 
 

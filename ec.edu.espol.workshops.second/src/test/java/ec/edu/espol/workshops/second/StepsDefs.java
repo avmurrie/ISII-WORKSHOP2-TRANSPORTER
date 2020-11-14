@@ -62,18 +62,5 @@ public class StepsDefs {
  }
  
  
- @Given("is customer {char}")
- public void is_customer(char gender) {
-	 this.gender=gender;
- }
- @When("Calculate the insurance prime female")
- public void calculate_the_insurance_prime_female() {
-	 prime= CarInsurance.calcularPrime(50,gender,'Y','Y');
- }
- @Then("Show prime 300")
- public void Show_prime_300() {
- assertEquals(300, prime);
- }
- 
  
 }
