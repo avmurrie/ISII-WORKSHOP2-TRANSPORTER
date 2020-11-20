@@ -46,22 +46,39 @@ public class CarInsurance {
 	
 	//return the value of the insurance charge or -1 if not applicable
 
-	public int calcularPrima() {
-		if(this.getAgeClient()<25 && Character.toUpperCase(this.getGenClient()) =='M' && Character.toUpperCase(this.getMarriedStatus())=='N') {
+	public int insurate() {
+		return (this.calcularPrime(this.ageClient, this.genClient, this.marriedStatus, this.licenseClient));
+	}
+	
+	public static int calcularPrime(int age, char gender, char married, char license) {
+		if(Character.toUpperCase(license)!='Y') {			
+			return -1;
+		}	
+		else if(Character.toUpperCase(gender) !='M' && Character.toUpperCase(gender) !='F') {
+			return -1;
+		}
+		else if(Character.toUpperCase(married) !='Y' && Character.toUpperCase(married) !='N') {
+			return -1;
+		}
+		else if(age<25 && Character.toUpperCase(gender) =='M' && Character.toUpperCase(married)=='N') {
 			return BASE+1500;
 		}
-		else if(Character.toUpperCase(this.getGenClient())=='F' || Character.toUpperCase(this.getMarriedStatus())=='Y') {
+		else if(Character.toUpperCase(gender)=='F' || Character.toUpperCase(married)=='Y') {
 			return BASE-200;
 		}
-		else if(this.getAgeClient()>45 && this.getAgeClient()<65) {
+		else if(age>45 && age<65) {
 			return BASE-100;
 		}
 		return BASE;
 	}
 	
+	
 	//return true or false if customer information does not meet the requirements
 	public boolean validarPolitica() {
-		if(this.getAgeClient()>80 || this.getAgeClient() < 0) {
+		if(this.getAgeClient()>80 || this.getAgeClient() < 18) {
+			return false;
+		}
+		else if(Character.toUpperCase(this.getLicenseClient())!='Y') {			
 			return false;
 		}
 		else if(Character.toUpperCase(this.getLicenseClient())=='Y') {			
@@ -74,3 +91,4 @@ public class CarInsurance {
 	
 
 }
+
