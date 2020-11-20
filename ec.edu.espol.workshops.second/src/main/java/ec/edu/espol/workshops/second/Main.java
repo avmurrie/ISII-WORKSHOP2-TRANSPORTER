@@ -20,7 +20,11 @@ public class Main {
         	char licencia=sc.next().charAt(0);
         	usuario= new CarInsurance(edad,gen,estado,licencia);
         	if(usuario.validarPolitica()) {
-        		System.out.println("The value of the premium is:"+	usuario.calcularPrima());
+        		int seguro = usuario.insurate();
+        		if (seguro == -1)
+        			System.out.println("incorrect Format: "+seguro);
+        		else
+        			System.out.println("The value of the premium is:"+	seguro);
         	}
         	else {
         		System.out.println("The customer does not apply to a valid premium");
@@ -35,3 +39,4 @@ public class Main {
         
 	}
 }
+
