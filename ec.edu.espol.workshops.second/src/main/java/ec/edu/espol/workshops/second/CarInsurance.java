@@ -1,7 +1,5 @@
 package ec.edu.espol.workshops.second;
 
-import java.lang.*;
-
 public class CarInsurance {
 
 	private int ageClient;
