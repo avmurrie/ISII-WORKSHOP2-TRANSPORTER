@@ -20,7 +20,7 @@ public class Main {
         	char licencia=sc.next().charAt(0);
         	usuario= new CarInsurance(edad,gen,estado,licencia);
         	if(usuario.validarPolitica()) {
-        		int seguro = usuario.insurate();
+        		int seguro = usuario.calcularPrime(edad, gen, estado, licencia);
         		if (seguro == -1)
         			System.out.println("incorrect Format: "+seguro);
         		else
@@ -36,7 +36,5 @@ public class Main {
         finally {
 	        sc.close();
 	    }
-        
 	}
 }
-

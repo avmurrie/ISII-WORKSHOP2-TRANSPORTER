@@ -44,9 +44,9 @@ public class CarInsurance {
 	
 	//return the value of the insurance charge or -1 if not applicable
 
-	public int insurate() {
+	/*public int insurate() {
 		return (this.calcularPrime(this.ageClient, this.genClient, this.marriedStatus, this.licenseClient));
-	}
+	}*/
 	
 	public static int calcularPrime(int age, char gender, char married, char license) {
 		if(Character.toUpperCase(license)!='Y') {			
@@ -79,10 +79,7 @@ public class CarInsurance {
 		else if(Character.toUpperCase(this.getLicenseClient())!='Y') {			
 			return false;
 		}
-		else if(Character.toUpperCase(this.getLicenseClient())=='Y') {			
-			return true;
-		}		
-		return false;
+		return true;
 	}
 
 	
