@@ -44,11 +44,12 @@ public class CarInsurance {
 	
 	//return the value of the insurance charge or -1 if not applicable
 
-	/*public int insurate() {
+	public int insurate() {
 		return (this.calcularPrime(this.ageClient, this.genClient, this.marriedStatus, this.licenseClient));
-	}*/
+	}
 	
 	public static int calcularPrime(int age, char gender, char married, char license) {
+		int prime = BASE;
 		if(Character.toUpperCase(license)!='Y') {			
 			return -1;
 		}	
@@ -59,17 +60,19 @@ public class CarInsurance {
 			return -1;
 		}
 		else if(age<25 && Character.toUpperCase(gender) =='M' && Character.toUpperCase(married)=='N') {
-			return BASE+1500;
+			prime += 1500;
+		}
+		else if((age>25 && age<45) && Character.toUpperCase(gender) =='M') {
+			prime -= 100;
 		}
 		else if(Character.toUpperCase(gender)=='F' || Character.toUpperCase(married)=='Y') {
-			return BASE-200;
-		}
+			prime -= 200;
+		}		
 		else if(age>45 && age<65) {
-			return BASE-100;
+			prime -= 100;
 		}
-		return BASE;
+		return prime;
 	}
-	
 	
 	//return true or false if customer information does not meet the requirements
 	public boolean validarPolitica() {
